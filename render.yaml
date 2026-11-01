@@ -1,0 +1,17 @@
+# Необов'язково: можна створити сервіс на Render вручну (див. DEPLOY.md)
+services:
+  - type: web
+    name: miy-vebprostir
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
